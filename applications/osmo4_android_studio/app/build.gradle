@@ -1,0 +1,28 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion '25.0.0'
+
+    defaultConfig {
+        applicationId "com.gpac.Osmo4"
+        minSdkVersion 8
+        targetSdkVersion 8
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+        debug {
+        //    jniDebuggable true
+        }
+    }
+}
+
+dependencies {
+    compile files('libs/Vuforia.jar')
+    compile files('libs/android-lge-real3d-api8.jar')
+    compile 'com.android.support:appcompat-v7:23.0.+'
+}
